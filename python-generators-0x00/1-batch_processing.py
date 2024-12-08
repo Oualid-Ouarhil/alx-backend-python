@@ -9,7 +9,7 @@ def stream_users_in_batches(batch_size):
         connection = mysql.connector.connect(
             host="localhost",
             user="root",  
-            password="", 
+            password="",  
             database="ALX_prodev"
         )
         cursor = connection.cursor(dictionary=True)  # Fetch rows as dictionaries
@@ -38,3 +38,8 @@ def batch_processing(batch_size):
         processed_batch = [user for user in batch if user['age'] > 25]
         for user in processed_batch:
             print(user)
+
+
+if __name__ == "__main__":
+    # Example usage
+    batch_processing(50)
